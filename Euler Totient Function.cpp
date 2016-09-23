@@ -8,3 +8,4 @@ int phi(int n) {
 	}
 	return n;
 }
+// TODO: add factor() implementation
