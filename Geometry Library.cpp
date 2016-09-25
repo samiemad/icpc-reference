@@ -1,6 +1,5 @@
 // DESCLAIMER: most of this file contents are taken from coach fegla reference, so thanks a lot coach :D
 // TODO: split into seperate files?
-// TODO: add isConvex(polygon) and ccw(v1, v2)
 #include <bits/stdc++.h>
 using namespace std;
 const double EPS = 1e-9;
@@ -26,6 +25,8 @@ const double pi = acos(-1);
 #define rotate(v,t) (polar(v,t))
 #define rotateabout(v,t,a) 	(rotate(vect(a,v),t)+(a))
 #define reflect(p,m) ((conj((p)/(m)))*(m))
+
+#define ccw(a,b,c) compare(cross(vect(a,b))*cross(vect(b,c)),0)
 
 int compare(double a, double b) {
 	if (fabs(a - b) < EPS)
@@ -373,4 +374,15 @@ point polygin_centroid(vector<point> &poly) {
 	res.X /= 6 * a;
 	res.Y /= 6 * a;
 	return res;
+}
+
+bool isConvex(const vector<point> &poly){
+	const int n = poly.size();
+	for(int i=0; i<n; ++i){
+		int j = (i+1)%n;
+		int k = (i+2)%n;
+		c1 += ccw(poly[i],poly[j],poly[k])==1;
+		c2 += ccw(poly[i],poly[j],poly[k])==-1;
+	}
+	return c1==0 || c2==0;
 }
