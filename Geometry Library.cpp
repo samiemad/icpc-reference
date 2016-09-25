@@ -1,5 +1,6 @@
 // DESCLAIMER: most of this file contents are taken from coach fegla reference, so thanks a lot coach :D
 // TODO: split into seperate files?
+// TODO: add isConvex(polygon) and ccw(v1, v2)
 #include <bits/stdc++.h>
 using namespace std;
 const double EPS = 1e-9;
