@@ -5,25 +5,26 @@ using namespace std;
 const double EPS = 1e-9;
 typedef long double ldouble;
 
+typedef complex<double> point;
+const double pi = acos(-1);
+
 #define sz(x) ((int)(x).size())
 #define dot(a,b) ((conj(a)*(b)).real())
 #define cross(a,b) ((conj(a)*(b)).imag())
 #define X real()
 #define Y imag()
+#define angle(a) atan2((a).imag(),(a).real())
 #define length(a) hypot((a).X,(a).Y)
 #define length2(a) dot(a,a)
 #define normalize(a) ((a)/length(a))
-#define polar(r,theta) 	(r)*exp(point(0,theta))
+#define polar(r,theta) 	((r)*exp(point(0,theta)))
 #define vect(p1,p2) ((p2)-(p1))
-#define mid(p1,p2)  ((p1)+(p2))/point(2,0)
+#define mid(p1,p2)  (((p1)+(p2))/point(2,0))
 #define perp(a) (point(-(a).Y,(a).X))
 #define same(a,b) (length2(vect(a,b))<EPS)
-#define angle(a) atan2((a).imag(),(a).real())
 #define rotate(v,t) (polar(v,t))
-#define rotateabout(v,t,a) 	(rotate(vec(a,v),t)+(a))
+#define rotateabout(v,t,a) 	(rotate(vect(a,v),t)+(a))
 #define reflect(p,m) ((conj((p)/(m)))*(m))
-typedef complex<double> point;
-const double pi = acos(-1);
 
 int compare(double a, double b) {
 	if (fabs(a - b) < EPS)
@@ -97,8 +98,9 @@ double pointSegmentDistance(const point& a, const point& b, const point& p) {
 }
 
 bool testColinearPoints(const point& a, const point& b, const point& c) {
-	return fabs(cross(b - a, c - b)) < 1e-9;
+	return fabs(cross(b - a, c - b)) < EPS;
 }
+
 //Triangles:
 long double triangleAreaBH(long double b, long double h) {
 	return b * h / 2;
