@@ -38,6 +38,8 @@ int compare(double a, double b) {
 }
 
 //Points & Lines:
+
+// WARNING: returns false if segments share an endpoint or intersect in an endpoint
 bool segmentIntersect(point a, point b, point p, point q) {
 	double d1 = cross(p - a, b - a);
 	double d2 = cross(q - a, b - a);
