@@ -1,3 +1,6 @@
+// gets the minimum(or maximum) value in a queue of numbers
+// push/pop/min in O(1) average 
+
 #include <bits/stdc++.h>
 using namespace std;
 
