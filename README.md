@@ -3,7 +3,7 @@ a collection of reference codes of some famous algorithms and data structures us
 
 This repo has few codes written by me. Most codes are collected from many great sources with minor modifications.. so thanks everyone I copied from :D 
 
-some other useful online resources:
+##Some other useful online resources:
 - https://github.com/marioyc/ACM-ICPC-Library
 - https://sites.google.com/site/indy256/algo_cpp
 - Stanford U. Reference: https://github.com/jaehyunp/stanfordacm
