@@ -6,10 +6,11 @@ This repo has few codes written by me. Most codes are collected from many great 
 some other useful online resources:
 - https://github.com/marioyc/ACM-ICPC-Library
 - https://sites.google.com/site/indy256/algo_cpp
-- https://github.com/jaehyunp/stanfordacm
-
+- Stanford U. Reference: https://github.com/jaehyunp/stanfordacm
+- Topcoder Algorithm tutorials: https://www.topcoder.com/community/data-science/data-science-tutorials/
 
 some useful categorized problems to test your algorithms:
 - http://www.lightoj.com/volume_problemcategory.php
 - http://www.spoj.com/problems/tags
 - https://a2oj.com/categories
+- http://codeforces.com/problemset?order=BY_SOLVED_DESC (click on a tag to see relevant problems)
