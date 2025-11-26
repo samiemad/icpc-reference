@@ -159,7 +159,7 @@ int isIntersecting(point c1, point c2, double r1, double r2) {
   // 5 if same circule
   if (compare(r1 + r2, length(c1 - c2)) < 0) return 0;        // no intersection
   if (compare(length(c1 - c2), fabs(r1 - r2)) < 0) return 4;  // no intersection
-  if (length(c1 - c2) < 1e-9 && compare(r1, r2) == 0) return 5;  // same circule
+  if (length(c1 - c2) < 1e-9 && compare(r1, r2) == 0) return 5;  // same circle
   if (compare(r1 + r2, length(c1 - c2)) == 0) return 2;
   if (compare(fabs(r1 - r2), length(c1 - c2)) == 0) return 3;
   if (compare(r1 + r2, length(c1 - c2)) > 0) return 1;
@@ -333,7 +333,7 @@ double polygonArea(vector<point> pol) {
 // The centroid is also known as the "centre of gravity" or the "center of
 // mass". The position of the centroid assuming the polygon to be made of
 // a material of uniform density.
-point polygin_centroid(vector<point>& poly) {
+point polygonCentroid(vector<point>& poly) {
   point res(0, 0);
   double a = 0;
   for (int i = 0; i < sz(poly); i++) {
@@ -352,6 +352,7 @@ point polygin_centroid(vector<point>& poly) {
 
 bool isConvex(const vector<point>& poly) {
   const int n = poly.size();
+  int c1 = 0, c2 = 0;
   for (int i = 0; i < n; ++i) {
     int j = (i + 1) % n;
     int k = (i + 2) % n;

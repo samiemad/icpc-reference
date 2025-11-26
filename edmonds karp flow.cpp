@@ -71,7 +71,7 @@ int main() {
     cap[x][y] += c;
     cap[y][x] += c;
   }
-  int SRC = 1, SINK = N;
+  int SRC = 1, SINK = n;
   while (augmenting(n, SRC, SINK)) {
     //		cerr<<"f = "<<f<<"\n";
   }
